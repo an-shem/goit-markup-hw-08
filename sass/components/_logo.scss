@@ -1,0 +1,19 @@
+.logo {
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.192;
+  letter-spacing: 0.03em;
+  color: #000000;
+
+  &__text-web {
+    color: $accent-color;
+  }
+}
+.header__logo {
+  margin-right: 93px;
+}
+.footer__logo {
+  margin-bottom: 20px;
+  color: $hero-title-color;
+}

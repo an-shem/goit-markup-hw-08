@@ -1,0 +1,6 @@
+/* Горизонтальное выравнивание контента
+ списка основной страницы */
+.main-list {
+  display: flex;
+  justify-content: space-between;
+}
