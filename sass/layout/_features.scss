@@ -1,10 +1,14 @@
-.features.section {
-  padding-bottom: 0px;
-}
-
 .features {
   &__item {
-    width: 270px;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+    }
 
     &::before {
       content: "";
@@ -38,18 +42,72 @@
 
   &__title {
     margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.143;
-    letter-spacing: 0.03em;
+    @include font-styles($fw: 700, $fs: 14px, $lh: 16px, $ls: 0.03em);
     text-transform: uppercase;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
 
   &__text {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.714;
-    letter-spacing: 0.03em;
+    @include font-styles($fw: 400, $fs: 14px, $lh: 24px, $ls: 0.03em);
     color: $text-color;
   }
 }
+
+// .features.section {
+//   padding-bottom: 0px;
+// }
+
+// .features {
+//   &__item {
+//     width: 270px;
+
+//     &::before {
+//       content: "";
+//       display: block;
+//       height: 120px;
+//       margin-bottom: 30px;
+//       background-repeat: no-repeat;
+//       background-position: center;
+//       background-color: #f5f4fa;
+//       border-radius: 4px;
+//     }
+
+//     &:nth-child(1)::before {
+//       background-image: url("../images/svg/svg-for-features/antenna.svg");
+//       background-size: 70px 70px;
+//     }
+
+//     &:nth-child(2)::before {
+//       background-image: url("../images/svg/svg-for-features/clock.svg");
+//       background-size: 70px 70px;
+//     }
+//     &:nth-child(3)::before {
+//       background-image: url("../images/svg/svg-for-features/diagram.svg");
+//       background-size: 70px 70px;
+//     }
+//     &:nth-child(4)::before {
+//       background-image: url("../images/svg/svg-for-features/astronaut.svg");
+//       background-size: 70px 70px;
+//     }
+//   }
+
+//   &__title {
+//     margin-bottom: 10px;
+//     font-weight: 700;
+//     font-size: 14px;
+//     line-height: 1.143;
+//     letter-spacing: 0.03em;
+//     text-transform: uppercase;
+//   }
+
+//   &__text {
+//     font-weight: 400;
+//     font-size: 14px;
+//     line-height: 1.714;
+//     letter-spacing: 0.03em;
+//     color: $text-color;
+//   }
+// }
