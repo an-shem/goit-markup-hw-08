@@ -1,10 +1,10 @@
 .logo {
   font-family: $secondary-font;
-  @include font-styles($fs: 26px, $lh: 31px);
-  // font-weight: 700;
-  // font-size: 26px;
-  // line-height: 1.192;
-  // letter-spacing: 0.03em;
+  @include font-styles($fs: 24px, $lh: 28px);
+
+  @media screen and (min-width: 1200px) {
+    @include font-styles($fs: 26px, $lh: 31px);
+  }
   color: #000000;
 
   &__text-web {
