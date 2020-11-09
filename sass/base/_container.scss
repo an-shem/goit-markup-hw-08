@@ -1,6 +1,12 @@
 .container {
   width: 100%;
   padding: 0 15px;
+
+  .header & {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 @media screen and (min-width: 480px) {
@@ -13,6 +19,13 @@
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
+
+    .header & {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .footer & {
       display: flex;
       flex-wrap: wrap;
@@ -24,9 +37,3 @@
     width: 1200px;
   }
 }
-
-//   .header & {
-//     display: flex;
-//     align-items: center;
-//   }
-// }

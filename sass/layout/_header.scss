@@ -1,27 +1,103 @@
 .header {
   border-bottom: 1px solid #ececec;
 
-  &__nav {
-    display: flex;
-    align-items: center;
+  @media screen and (max-width: 767px) {
+    position: relative;
   }
 
-  &__nav-list,
-  &__address-list {
+  &__btn-menu {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+  &__icon-close {
+    display: none;
+  }
+  &__btn-menu.is-open &__icon-close {
+    display: block;
+  }
+  &__btn-menu.is-open &__icon-menu {
+    display: none;
+  }
+
+  &__menu {
     display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+      position: absolute;
+      top: 101%;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      padding: 60px 0;
+      z-index: 50;
+      text-align: center;
+      background-color: #fff;
+
+      &.is-open {
+        display: flex;
+      }
+    }
+  }
+
+  &__nav {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__nav-list {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+  &__address-list {
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
   }
 
   &__nav-item {
-    position: relative;
-    padding: 32px 0;
+    @media screen and (min-width: 768px) {
+      padding: 32px 0;
+    }
   }
 
-  &__nav-item:not(:last-child),
+  &__nav-item:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-right: 50px;
+    }
+  }
   &__address-item:not(:last-child) {
-    margin-right: 50px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: 1200px) {
+      margin-right: 50px;
+      margin-bottom: 0;
+    }
   }
 
   &__nav-link {
+    position: relative;
     color: $title-color;
   }
   &__address-link {
@@ -30,12 +106,12 @@
 
   &__nav-link,
   &__address-link {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.143;
-    letter-spacing: 0.02em;
+    @include font-styles($fw: 500, $fs: 14px, $lh: 16px, $ls: 0.02em);
     transition: color 250ms $cubic;
 
+    @media screen and (max-width: 767px) {
+      @include font-styles($fw: 500, $fs: 18px, $lh: 21px, $ls: 0.02em);
+    }
     &:hover,
     &:focus {
       color: $accent-color;
@@ -49,17 +125,22 @@
       content: "";
       display: block;
       position: absolute;
-      bottom: 0;
+      bottom: -8px;
       width: 100%;
       height: 4px;
       border-radius: 2px;
       background-color: $accent-color;
+      @media screen and (min-width: 768px) {
+        bottom: -32px;
+      }
     }
   }
-}
 
-.header .address {
-  margin-left: auto;
+  & .address {
+    @media screen and (min-width: 768px) {
+      margin-left: auto;
+    }
+  }
 }
 
 .envelope {
@@ -75,7 +156,7 @@
 .envelope,
 .smartphone {
   margin-right: 10px;
-  color: $text-color;
+  fill: $text-color;
 
   .header__address-link:hover &,
   .header__address-link:focus & {
