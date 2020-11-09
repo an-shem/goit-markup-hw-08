@@ -1,11 +1,21 @@
 .projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -15px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 
   &__item {
-    margin: 15px;
+    &:not(:last-child) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
     transition: box-shadow 250ms $cubic;
+    @media screen and (min-width: 768px) {
+      margin: 15px;
+    }
 
     &:hover,
     &:focus {
@@ -16,6 +26,19 @@
   &__wrap {
     position: relative;
     overflow: hidden;
+  }
+
+  &__img {
+    width: 450px;
+    height: 294px;
+
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 370px;
+    }
   }
 
   &__overlay {
@@ -34,10 +57,7 @@
   }
 
   &__text-overlay {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.56;
-    letter-spacing: 0.03em;
+    @include font-styles($fw: 400, $fs: 18px, $lh: 28px, $ls: 0.03em);
     color: $hero-title-color;
   }
 
@@ -49,17 +69,17 @@
   }
   &__name {
     margin-bottom: 4px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
+    @include font-styles($fw: 700, $fs: 18px, $lh: 36px, $ls: 0.06em);
     color: $title-color;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      &--reduce-text {
+        @include font-styles($fw: 700, $fs: 18px, $lh: 36px, $ls: 0.03em);
+      }
+    }
   }
+
   &__filter {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.875;
-    letter-spacing: 0.03em;
+    @include font-styles($fw: 400, $fs: 16px, $lh: 30px, $ls: 0.03em);
     color: $text-color;
   }
 }
