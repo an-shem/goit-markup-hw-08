@@ -6,6 +6,7 @@
 }
 
 .modal-beckdrop {
+  padding: 93px 15px 0;
   position: fixed;
   z-index: 5;
   width: 100%;
@@ -14,19 +15,32 @@
   top: 0px;
   background: rgba(0, 0, 0, 0.2);
   transition: all 500ms linear;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 767px) {
+    padding: 93px 15px;
+  }
 }
 
 .modal {
-  position: absolute;
+  position: relative;
   padding: 40px;
-  width: 528px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: all 500ms linear;
+
+  @media screen and (min-width: 480px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
 
   .modal-beckdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(1.5);
@@ -56,21 +70,17 @@
   display: flex;
   flex-direction: column;
   @include font-styles($fw: 400, $fs: 12px, $lh: 14px, $ls: 0.01em);
-  // font-weight: 400;
-  // font-size: 12px;
-  // line-height: 1.167;
-  // letter-spacing: 0.01em;
   color: $text-color;
 
   &__text {
-    margin-bottom: 30px;
-    @include font-styles($fw: 700, $fs: 20px, $lh: 23px, $ls: 0.03em);
-    // font-weight: 700;
-    // font-size: 20px;
-    // line-height: 1.15;
-    // letter-spacing: 0.03em;
+    margin-bottom: 12px;
+    @include font-styles($fw: 700, $fs: 20px, $lh: 30px, $ls: 0.03em);
     text-align: center;
     color: $title-color;
+
+    @media screen and (min-width: 1200px) {
+      @include font-styles($fw: 700, $fs: 20px, $lh: 23px, $ls: 0.03em);
+    }
   }
 
   &__label {
@@ -112,12 +122,12 @@
     display: flex;
     margin-bottom: 30px;
     align-items: center;
-    @include font-styles($fw: 400, $fs: 14px, $lh: 24px, $ls: 0.03em);
-    // font-weight: normal;
-    // font-size: 14px;
-    // line-height: 1.71;
-    // letter-spacing: 0.03em;
+    @include font-styles($fw: 400, $fs: 12px, $lh: 14px, $ls: 0.03em);
     color: $text-color;
+
+    @media screen and (min-width: 1200px) {
+      @include font-styles($fw: 400, $fs: 14px, $lh: 24px, $ls: 0.03em);
+    }
   }
 
   &__checkbox-link {

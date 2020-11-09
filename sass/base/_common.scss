@@ -12,6 +12,10 @@ body {
   font-family: $maim-font;
   font-style: normal;
   color: $title-color;
+
+  &.modal-open {
+    overflow: hidden;
+  }
 }
 
 ul {

@@ -42,6 +42,10 @@ body {
   color: #212121;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 ul {
   list-style: none;
 }
@@ -197,6 +201,7 @@ img {
 }
 
 .modal-beckdrop {
+  padding: 93px 15px 0;
   position: fixed;
   z-index: 5;
   width: 100%;
@@ -205,19 +210,38 @@ img {
   top: 0px;
   background: rgba(0, 0, 0, 0.2);
   transition: all 500ms linear;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-beckdrop {
+    padding: 93px 15px;
+  }
 }
 
 .modal {
-  position: absolute;
+  position: relative;
   padding: 40px;
-  width: 528px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: all 500ms linear;
+}
+
+@media screen and (min-width: 480px) {
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
 }
 
 .modal-beckdrop.is-hidden .modal {
@@ -253,13 +277,22 @@ img {
 }
 
 .form__text {
-  margin-bottom: 30px;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   text-align: center;
   color: #212121;
+}
+
+@media screen and (min-width: 1200px) {
+  .form__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+  }
 }
 
 .form__label {
@@ -301,10 +334,19 @@ img {
   margin-bottom: 30px;
   align-items: center;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71429;
+  font-size: 12px;
+  line-height: 1.16667;
   letter-spacing: 0.03em;
   color: #757575;
+}
+
+@media screen and (min-width: 1200px) {
+  .form__checkbox {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71429;
+    letter-spacing: 0.03em;
+  }
 }
 
 .form__checkbox-link {
