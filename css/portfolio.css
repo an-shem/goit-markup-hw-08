@@ -492,8 +492,8 @@ img {
 }
 
 .projects-list__img {
-  width: 450px;
-  height: 294px;
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 768px) {
