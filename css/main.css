@@ -330,7 +330,6 @@ img {
 }
 
 .form__checkbox {
-  display: flex;
   margin-bottom: 30px;
   align-items: center;
   font-weight: 400;
@@ -338,6 +337,12 @@ img {
   line-height: 1.16667;
   letter-spacing: 0.03em;
   color: #757575;
+}
+
+@media screen and (min-width: 480px) {
+  .form__checkbox {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 1200px) {

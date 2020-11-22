@@ -119,11 +119,14 @@
   }
 
   &__checkbox {
-    display: flex;
     margin-bottom: 30px;
     align-items: center;
     @include font-styles($fw: 400, $fs: 12px, $lh: 14px, $ls: 0.03em);
     color: $text-color;
+
+    @media screen and (min-width: 480px) {
+      display: flex;
+    }
 
     @media screen and (min-width: 1200px) {
       @include font-styles($fw: 400, $fs: 14px, $lh: 24px, $ls: 0.03em);
